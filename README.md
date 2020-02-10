@@ -1,2 +1,2 @@
-# informd-angularjs
-Angularjs implementation of a news feed
+# Angularjs-example
+Angularjs implementation of a CRUD todo list and notes
