@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body class="main">
+    <h2 class="head">Todo Simple CRUD operations(Angularjs)</h2>
+    <div ng-controller="TodoListController as todoList">
+      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+      [ <a href="" class="remaining" ng-click="todoList.archive()"> Archive all done tasks</a> ]
+      <ul class="unstyled" class="items">
+        <li ng-repeat="todo in todoList.todos" class="items">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </label>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTodo()">
+        <input type="text" ng-model="todoList.todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+    <h2 class="head">Simple CRUD operations on Notes(Directive Test)</h2>
+    <div ng-controller="NotesController as notes">
+      <ul class="unstyled" class="items">
+          <li ng-repeat="note in notes" class="items">
+            <h3>{{note.title}}</h3>
+            <p>{{note.description}}</p>
+            <span ng-if="note.edited" class="edited-{{note.edited}}">Edited</span>
+          </li>
+      </ul>
+    </div>
+  </body>
+</html>

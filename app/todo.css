@@ -1,0 +1,19 @@
+.done-true {
+  text-decoration: line-through;
+  color: black;
+}
+.main {
+  background-color: grey;
+}
+.head {
+  text-align: center;
+}
+.remaining {
+  font-weight: bold;
+}
+.items {
+  margin-bottom: 20px;
+}
+.edited-true {
+  color:green;
+}
